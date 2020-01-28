@@ -505,7 +505,7 @@ def calc_overlap_val(hdu_sk, hdu_ex, overlap_x, overlap_y, method='biweight'):
             grab_pix.append(count_rate[ int(overlap_y[h][i]), int(overlap_x[h][i]) ])
 
         # do a sigma clip
-        pix_clip = sigma_clip(np.array(grab_pix), sigma=2.5, iters=3)
+        pix_clip = sigma_clip(np.array(grab_pix), sigma=2.5, maxiters=3)
             
         # calculate biweight
         #biweight_noclip = biweight_location(np.array(grab_pix))
